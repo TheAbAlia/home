@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.a5a525c0.css",
-    "main.js": "/home/static/js/main.8f7ba7d2.js",
-    "static/js/787.6971d1b3.chunk.js": "/home/static/js/787.6971d1b3.chunk.js",
-    "static/media/hashirshoaeb.png": "/home/static/media/hashirshoaeb.23e8b5a1f7de87f03d05.png",
-    "index.html": "/home/index.html",
-    "main.a5a525c0.css.map": "/home/static/css/main.a5a525c0.css.map",
-    "main.8f7ba7d2.js.map": "/home/static/js/main.8f7ba7d2.js.map",
-    "787.6971d1b3.chunk.js.map": "/home/static/js/787.6971d1b3.chunk.js.map"
+    "main.css": "./static/css/main.fe927caf.css",
+    "main.js": "./static/js/main.ac9f9817.js",
+    "static/js/787.4b24f717.chunk.js": "./static/js/787.4b24f717.chunk.js",
+    "static/media/abdallaalia.png": "./static/media/abdallaalia.6d42420306cd4b2a6630.png",
+    "static/media/UniMarburg.png": "./static/media/UniMarburg.b81124193cea101de3c4.png",
+    "static/media/UniBonn.png": "./static/media/UniBonn.88783f7b9bd6a914910e.png",
+    "static/media/UniDamas.png": "./static/media/UniDamas.1a518b5fdd30b2b282f7.png",
+    "static/media/veeva.png": "./static/media/veeva.1b5bf5d87c32658c382f.png",
+    "static/media/suewag.png": "./static/media/suewag.22a99b2cbbedd295f556.png",
+    "index.html": "./index.html",
+    "main.fe927caf.css.map": "./static/css/main.fe927caf.css.map",
+    "main.ac9f9817.js.map": "./static/js/main.ac9f9817.js.map",
+    "787.4b24f717.chunk.js.map": "./static/js/787.4b24f717.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5a525c0.css",
-    "static/js/main.8f7ba7d2.js"
+    "static/css/main.fe927caf.css",
+    "static/js/main.ac9f9817.js"
   ]
 }
