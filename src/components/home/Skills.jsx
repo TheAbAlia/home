@@ -7,10 +7,17 @@ import { Jumbotron } from "./migration";
 import { Container } from "react-bootstrap";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 
-const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
+const Skills = React.forwardRef(({ heading, hardSkills, softSkills, mixSkills }, ref) => {
   const skillsTabRef = React.useRef(null);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  //const navbarDimensions = useResizeObserver(navbarMenuRef);
+  const [activeKey, setActiveKey] = React.useState('hard-skills');
+
+  console.log('Skills component render:', {
+    activeKey,
+    hardSkillsLength: hardSkills?.length,
+    softSkillsLength: softSkills?.length,
+    mixSkillsLength: mixSkills?.length
+  });
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -19,22 +26,29 @@ const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
     [],
     skillsTabRef
   );
+
+  const handleTabSelect = (key) => {
+    console.log('Tab selected:', key);
+    setActiveKey(key);
+  };
+
   return (
     <Jumbotron ref={skillsTabRef} fluid className="bg-white m-0" id="skills">
-      <Container className="p-5 ">
+      <Container className="p-5">
         <h2 ref={skillsTabRef} className="display-4 pb-5 text-center">
           {heading}
         </h2>
         <Tabs
           className="skills-tabs"
-          defaultActiveKey="hard-skills"
+          activeKey={activeKey}
+          onSelect={handleTabSelect}
           id="skills-tabs"
           fill
         >
           <Tab
             tabClassName="skills-tab lead"
             eventKey="hard-skills"
-            title="Technical Skills"
+            title="Programming & Product Management"
           >
             <Row className="pt-3 px-1">
               <SkillsTab skills={hardSkills} isScrolled={isScrolled} />
@@ -43,10 +57,22 @@ const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
           <Tab
             tabClassName="skills-tab lead"
             eventKey="soft-skills"
-            title="Soft Skills"
+            title="Data Engineering & Databases"
           >
             <Row className="pt-3 px-1">
               <SkillsTab skills={softSkills} isScrolled={isScrolled} />
+            </Row>
+          </Tab>
+          <Tab
+            tabClassName="skills-tab lead"
+            eventKey="mix-skills"
+            title="Data Visualization & Analytics"
+          >
+            <Row className="pt-3 px-1">
+              <SkillsTab 
+                skills={mixSkills} 
+                isScrolled={isScrolled}
+              />
             </Row>
           </Tab>
         </Tabs>

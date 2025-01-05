@@ -7,7 +7,7 @@ const Leadership = ({ heading, img, imageSize }) => {
     <Jumbotron
       id="leadership"
       className="m-0"
-      style={{ backgroundColor: "white", position: "relative" }}
+      style={{ backgroundColor: "#EBEBEB", position: "relative" }}
     >
       <h2 className="display-4 pb-5 text-center">{heading}</h2>
       <div className="row">

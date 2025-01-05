@@ -46,8 +46,8 @@ const about = {
   imageLink: require("../editable-stuff/abdallaalia.png"),
   imageSize: 375,
   message:
-    "As an expert data analyst with deep expertise in the energy sector in Germany, I combine strategic foresight with a strong technical background in business intelligence and data analytics. My career is built on a respected academic foundation and a proven track record of delivering insights that drive business growth and operational excellence.",
-  resume: "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
+    "As an expert in data analytics and engineering with deep expertise in Germany's energy sector, I combine strategic foresight with a robust technical background in business intelligence, data pipelines, and big data ecosystems. My career is built on a respected academic foundation and a proven track record of delivering actionable insights and scalable data solutions that drive business growth and operational excellence.",
+  resume: "https://drive.google.com/file/d/1_Jft6kqddQ6MyLyag7XEZGIgAp-D-Rwj/view?usp=drive_link",
 };
 
 // PROJECTS SECTION
@@ -106,26 +106,31 @@ const skills = {
   show: true,
   heading: "Skills",
   hardSkills: [
-    { name: "Python", value: 90 },
-    { name: "SQL", value: 75 },
-    { name: "Data Structures", value: 85 },
-    { name: "C/C++", value: 65 },
-    { name: "JavaScript", value: 90 },
-    { name: "React", value: 65 },
-    { name: "HTML/CSS", value: 55 },
-    { name: "C#", value: 80 },
+    { name: "Python", value: 100 },
+    { name: "R", value: 100 },
+    { name: "Bash scripting", value: 100 },
+    { name: "Git", value: 100 },
+    { name: "Confluence", value: 100 },
+    { name: "JIRA", value: 100 },
   ],
   softSkills: [
-    { name: "Goal-Oriented", value: 80 },
-    { name: "Collaboration", value: 90 },
-    { name: "Positivity", value: 75 },
-    { name: "Adaptability", value: 85 },
-    { name: "Problem Solving", value: 75 },
-    { name: "Empathy", value: 90 },
-    { name: "Organization", value: 70 },
-    { name: "Creativity", value: 90 },
+    { name: "Apache Spark", value: 100 },
+    { name: "Apache Airflow", value: 100 },
+    { name: "Apache Kafka", value: 100 },
+    { name: "MySQL (Oracle)", value: 100 },
+    { name: "NoSQL (MangoDB)", value: 100 },
+    { name: "Azure (Data Lakes)", value: 100 },
+  ],
+  mixSkills: [
+    { name: "KNIME", value: 100 },
+    { name: "Power BI", value: 100 },
+    { name: "Shiny", value: 100 },
+    { name: "RMarkdowns", value: 100 },
+    { name: "SAC (SAP Analytics Cloud)", value: 100 },
+    { name: "BW Query Design & Development (SAP)", value: 100 },
   ],
 };
+
 
 // GET IN TOUCH SECTION
 const getInTouch = {
@@ -158,7 +163,12 @@ const experiences = {
 //   show: false,
 // };
 
-
+console.log('Skills data before render:', {
+  heading: skills.heading,
+  hardSkills: skills.hardSkills,
+  softSkills: skills.softSkills,
+  mixSkills: skills.mixSkills
+});
 
 
 export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences };
