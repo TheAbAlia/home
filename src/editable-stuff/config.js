@@ -47,7 +47,7 @@ const about = {
   imageSize: 375,
   message:
     "As an expert in data analytics and engineering with deep expertise in Germany's energy sector, I combine strategic foresight with a robust technical background in business intelligence, data pipelines, and big data ecosystems. My career is built on a respected academic foundation and a proven track record of delivering actionable insights and scalable data solutions that drive business growth and operational excellence.",
-  resume: "https://drive.google.com/file/d/1_Jft6kqddQ6MyLyag7XEZGIgAp-D-Rwj/view?usp=drive_link",
+  resume: "https://drive.google.com/file/d/1C75-UIcSydRHMc2I4RikTEXY6m7KsL3s/view?usp=drive_link",
 };
 
 // PROJECTS SECTION
