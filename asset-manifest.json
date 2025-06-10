@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fe927caf.css",
+    "main.js": "/static/js/main.a09150e1.js",
+    "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
+    "static/media/abdallaalia.png": "/static/media/abdallaalia.6d42420306cd4b2a6630.png",
+    "static/media/UniMarburg.png": "/static/media/UniMarburg.b81124193cea101de3c4.png",
+    "static/media/UniBonn.png": "/static/media/UniBonn.88783f7b9bd6a914910e.png",
+    "static/media/UniDamas.png": "/static/media/UniDamas.1a518b5fdd30b2b282f7.png",
+    "static/media/veeva.png": "/static/media/veeva.1b5bf5d87c32658c382f.png",
+    "static/media/suewag.png": "/static/media/suewag.22a99b2cbbedd295f556.png",
+    "index.html": "/index.html",
+    "main.fe927caf.css.map": "/static/css/main.fe927caf.css.map",
+    "main.a09150e1.js.map": "/static/js/main.a09150e1.js.map",
+    "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe927caf.css",
+    "static/js/main.a09150e1.js"
+  ]
+}
