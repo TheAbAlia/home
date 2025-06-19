@@ -46,7 +46,7 @@ const about = {
   imageLink: require("../editable-stuff/abdallaalia.png"),
   imageSize: 375,
   message:
-    "As an expert in data analytics and engineering with deep expertise in Germany's energy sector, I combine strategic foresight with a robust technical background in business intelligence, data pipelines, and big data ecosystems. My career is built on a respected academic foundation and a proven track record of delivering actionable insights and scalable data solutions that drive business growth and operational excellence.",
+    "As a Senior Data Management Consultant and AI Solutions Architect with extensive experience in the German energy sector, I leverage a strong academic background in Mathematics  to deliver transformative data strategies. I specialize in architecting scalable big data ecosystems, optimizing ETL pipelines, and developing AI-powered applications that drive customer lifecycle management, enhance operational efficiency, and generate actionable insights for executive leadership.",
   resume: "https://drive.google.com/file/d/1C75-UIcSydRHMc2I4RikTEXY6m7KsL3s/view?usp=drive_link",
 };
 
@@ -55,10 +55,11 @@ const about = {
 //      i.e: reposLength: 0,
 // If you want to display specfic projects, add the repository names,
 //      i.e ["repository-1", "repo-2"]
+
 const repos = {
   show: false,
   heading: "Recent Projects",
-  gitHubUsername: "hashirshoaeb", //i.e."johnDoe12Gh"
+  gitHubUsername: "TheAbAlia", //i.e."johnDoe12Gh"
   reposLength: 4,
   specificRepos: [],
 };
@@ -105,29 +106,57 @@ const leadership = {
 const skills = {
   show: true,
   heading: "Skills",
-  hardSkills: [
-    { name: "Python, R, Bash scripting", value: 100 },
-    { name: "Git, JIRA, Confluence", value: 100 },
-    { name: "Machine Learning Pipelines (scikit-learn, pandas)", value: 100 },
-    { name: "Jupyter Notebooks & Agile Development", value: 100 },
-    { name: "Automation with Bash & Python scripts", value: 100 },
-    { name: "VS Code & Jupyter as Primary IDEs", value: 100 },
-  ],
-  softSkills: [
-    { name: "ETL Workflows with Apache Airflow", value: 100 },
-    { name: "Big Data Tools: Spark & Kafka", value: 100 },
-    { name: "Databases: Oracle SQL & MongoDB", value: 100 },
-    { name: "SAP BW Query & Data Modeling", value: 100 },
-    { name: "Automated Data Ingestion & Web Scraping", value: 100 },
-    { name: "Data Modeling: Star, Snowflake, Normalized", value: 100 },
-  ],
-  mixSkills: [
-    { name: "BI Tools: Power BI, SAP Analytics Cloud, Shiny", value: 100 },
-    { name: "Reporting: RMarkdown & Jupyter Reports", value: 100 },
-    { name: "Interactive Dashboards for Segmentation & Churn", value: 100 },
-    { name: "Data Storytelling & Executive Dashboards", value: 100 },
-    { name: "Visualization Libraries: ggplot2, matplotlib", value: 100 },
-    { name: "KPI Dashboards: Sales, Retention, Lifecycle", value: 100 },
+  categories: [
+    {
+      title: "Programming & Scripting",
+      proficiency: "Expert",
+      skills: [
+        "Python (Advanced Data Science, Automation, Web Scraping)",
+        "R (Statistical Modeling, Advanced Reporting)",
+        "Bash Scripting",
+        "Version Control & Collaboration (Git, JIRA, Confluence) ",
+      ],
+    },
+    {
+      title: "Data Engineering & Management",
+      proficiency: "Advanced",
+      skills: [
+        "ETL Pipeline Development & Optimization (Apache Airflow) ",
+        "Big Data Technologies (Spark, Kafka) ",
+        "Robust Database Management (Oracle SQL, MongoDB) ",
+        "SAP BW Query Design & Development & Modeling ",
+      ],
+    },
+    {
+      title: "ML Operations & AI Solutions",
+      proficiency: "Advanced",
+      skills: [
+        "End-to-End ML Pipeline Development & Operationalization",
+        "Predictive Modeling (Segmentation, Churn & Acquisition Forecasting) ",
+        "AI-Powered Application Development & Integration ",
+        "Strategic Data-Driven Decision Support",
+      ],
+    },
+    {
+      title: "BI & Reporing Solutions",
+      proficiency: "Advanced",
+      skills: [
+        "Interactive Dashboard Development (Power BI, SAP Analytics Cloud, Shiny) ",
+        "Key Performance Indicator Development & Optimization",
+        "Executive-Level Reporting & Data Storytelling",
+        "Advanced Data Visualization Libraries",
+      ],
+    },
+    {
+      title: "Development",
+      proficiency: "Expert",
+      skills: [
+        "Integrated Development Environments (VS Code, Jupyter Notebooks) ",
+        "Agile Development & Project Management Methodologies",
+        "CI/CD-Aware Coding Practices for Production Environments",
+        "Comprehensive Documentation & Reporting (RMarkdown, Jupyter Reports) ",
+      ],
+    },
   ],
 };
 

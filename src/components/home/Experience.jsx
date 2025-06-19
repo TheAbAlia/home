@@ -8,7 +8,7 @@ import {
 
 const Experience = ({ experiences }) => {
   return (
-    <section className="section">
+    <section className="section" id="experiences"> {/* <-- Add id="experiences" here */}
       <Container>
         <Jumbotron className="bg-white">
           <h2 className="display-4 mb-5 text-center">
