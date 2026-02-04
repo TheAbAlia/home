@@ -46,7 +46,7 @@ const about = {
   imageLink: require("../editable-stuff/abdallaalia.png"),
   imageSize: 375,
   message:
-    "As a Senior Data Management Consultant and AI Solutions Architect with extensive experience in the German energy sector, I leverage a strong academic background in Mathematics  to deliver transformative data strategies. I specialize in architecting scalable big data ecosystems, optimizing ETL pipelines, and developing AI-powered applications that drive customer lifecycle management, enhance operational efficiency, and generate actionable insights for executive leadership.",
+    "Senior Data Management Consultant and AI Solutions Architect with a PhD in Mathematics and deep experience in the German energy sector. I design scalable data platforms, optimize ETL pipelines, and build AI-driven solutions that turn messy data into clear decisions—across customer lifecycle management, operations, and leadership reporting.",
   resume: "https://drive.google.com/file/d/1C75-UIcSydRHMc2I4RikTEXY6m7KsL3s/view?usp=drive_link",
 };
 
