@@ -1,102 +1,41 @@
+import { LanguageProvider, useLanguage } from "./i18n/LanguageContext";
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-  navBar,
-  mainBody,
-  about,
-  repos,
-  leadership,
-  skills,
-  getInTouch,
-  experiences
-} from "./editable-stuff/config.js";
-import MainBody from "./components/home/MainBody";
-import AboutMe from "./components/home/AboutMe";
-import Project from "./components/home/Project";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Skills from "./components/home/Skills";
-// import { Blog } from "./components/blog/Blog";
-// import BlogPost from "./components/blog/BlogPost";
-import GetInTouch from "./components/home/GetInTouch.jsx";
-import Leadership from "./components/home/Leadership.jsx";
+import useReveal from "./hooks/usePortfolioReveal";
+import Header from "./components/portfolio/Header";
+import Hero from "./components/portfolio/Hero";
+import Impact from "./components/portfolio/Impact";
+import Projects from "./components/portfolio/Projects";
+import Experience from "./components/portfolio/Experience";
+import Expertise from "./components/portfolio/Expertise";
+import About from "./components/portfolio/About";
+import Contact from "./components/portfolio/Contact";
 
-import Experience from "./components/home/Experience";
-
-const Home = React.forwardRef((props, ref) => {
-  return (
-    <>
-      <MainBody
-        gradient={mainBody.gradientColors}
-        title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
-        message={mainBody.message}
-        icons={mainBody.icons}
-        ref={ref}
-      />
-      {about.show && (
-        <AboutMe
-          heading={about.heading}
-          message={about.message}
-          link={about.imageLink}
-          imgSize={about.imageSize}
-          resume={about.resume}
-        />
-      )}
-      {
-        experiences.show && (
-          <Experience experiences={experiences}/>
-        )
-      }
-      {repos.show && (
-        <Project
-          heading={repos.heading}
-          username={repos.gitHubUsername}
-          length={repos.reposLength}
-          specfic={repos.specificRepos}
-        />
-      )}
-      {leadership.show && (
-        <Leadership
-          heading={leadership.heading}
-          message={leadership.message}
-          img={leadership.images}
-          imageSize={leadership.imageSize}
-        />
-      )}
-      {skills.show && (
-  <Skills
-    heading={skills.heading}
-    categories={skills.categories}
-  />
-)}
-
-      
-    </>
-  );
-});
-
-const App = () => {
-  const titleRef = React.useRef();
+function PortfolioPage() {
+  const { t } = useLanguage();
+  useReveal();
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
-      {navBar.show && <Navbar ref={titleRef} />}
-      <Routes>
-        <Route path="/" exact element={<Home ref={titleRef} />} />
-      </Routes>
-      {/* {false && <Route path="/blog" exact component={Blog} />}
-      {false && <Route path="/blog/:id" component={BlogPost} />} */}
-      <Footer>
-        {getInTouch.show && (
-          <GetInTouch
-            heading={getInTouch.heading}
-            message={getInTouch.message}
-            email={getInTouch.email}
-          />
-        )}
-      </Footer>
-    </BrowserRouter>
+    <div className="portfolio-v8">
+      <a className="p8-skip" href="#main-content">{t.skip}</a>
+      <Header />
+      <main id="main-content">
+        <Hero />
+        <Impact />
+        <Projects />
+        <Experience />
+        <Expertise />
+        <About />
+      </main>
+      <Contact />
+    </div>
   );
-};
+}
 
-export default App;
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <PortfolioPage />
+    </LanguageProvider>
+  );
+}
