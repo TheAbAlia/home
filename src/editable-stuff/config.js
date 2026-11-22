@@ -1,15 +1,17 @@
-// Navigation Bar SECTION
+// Navigation
 const navBar = {
   show: true,
 };
 
-// Main Body SECTION
+// Hero
 const mainBody = {
-  gradientColors: "#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
   firstName: "Abdalla",
   middleName: "",
   lastName: "Alia, Ph.D.",
-  message: " Empowering companies to harness their data for smarter decision-making. ",
+
+  message:
+    "I design data platforms, intelligent systems and technical products around problems that deserve more than an off-the-shelf answer.",
+
   icons: [
     {
       image: "fa-github",
@@ -26,178 +28,342 @@ const mainBody = {
   ],
 };
 
-// ABOUT SECTION
-// If you want the About Section to show a profile picture you can fill the profilePictureLink either with:
-//a) your Instagram username
-//      i.e:profilePictureLink:"johnDoe123",
-//b) a link to an hosted image
-//      i.e:profilePictureLink:"www.picturesonline.com/johnDoeFancyAvatar.jpg",
-//c) image in "editable-stuff" directory and use require("") to import here,
-//      i.e: profilePictureLink: require("../editable-stuff/abdallaalia.png"),
-//d) If you do not want any picture to be displayed, just leave it empty :)
-//      i.e: profilePictureLink: "",
-// For Resume either provide link to your resume or import from "editable-stuff" directory
-//     i.e resume: require("../editable-stuff/resume.pdf"),
-//         resume: "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
-
+// Profile / About
 const about = {
   show: true,
-  heading: "About Me",
+
+  heading: "Profile",
+
   imageLink: require("../editable-stuff/abdallaalia.png"),
-  imageSize: 375,
-  message:
-    "As a Senior Data Management Consultant and AI Solutions Architect with extensive experience in the German energy sector, I leverage a strong academic background in Mathematics  to deliver transformative data strategies. I specialize in architecting scalable big data ecosystems, optimizing ETL pipelines, and developing AI-powered applications that drive customer lifecycle management, enhance operational efficiency, and generate actionable insights for executive leadership.",
-  resume: "https://drive.google.com/file/d/131kxhDhTdIYzipwaD_Mdfq5vqtmJGNVU/view?usp=sharing",
+
+message:
+  "I work across data, software and applied AI, with a particular interest in problems where the technical challenge is only part of the picture. My background in mathematics taught me to look for structure before tools, and that still shapes how I work today.",
+
+  resume:
+    "https://drive.google.com/file/d/131kxhDhTdIYzipwaD_Mdfq5vqtmJGNVU/view?usp=sharing",
 };
 
-// PROJECTS SECTION
-// Setting up project lenght will automatically fetch your that number of recently updated projects, or you can set this field 0 to show none.
-//      i.e: reposLength: 0,
-// If you want to display specfic projects, add the repository names,
-//      i.e ["repository-1", "repo-2"]
+// Selected Work
+const selectedWork = {
+  show: true,
 
+  items: [
+    {
+      number: "001",
+
+      title: "Independent Projects",
+
+      eyebrow: "Independent technology studio",
+
+      year: "2026 —",
+
+      description:
+        "I founded Independent Projects to build digital products, intelligent systems and technical infrastructure with an emphasis on clarity, reliability and long-term usefulness.",
+
+      meta: [
+        "Founder",
+        "Strategy",
+        "Architecture",
+        "Engineering",
+      ],
+
+      link: "#contact",
+    },
+  ],
+};
+
+// Legacy GitHub Projects
+// Kept disabled while Selected Work becomes the primary portfolio section.
 const repos = {
   show: false,
+
   heading: "Recent Projects",
-  gitHubUsername: "TheAbAlia", //i.e."johnDoe12Gh"
+
+  gitHubUsername: "TheAbAlia",
+
   reposLength: 4,
+
   specificRepos: [],
 };
 
-// Leadership SECTION
-const leadership = {
+// Experience
+const experiences = {
   show: true,
-  heading: "Education",
-  images: [
-    { 
-      img: require("../editable-stuff/UniMarburg.png"), 
-      name: "Philipps-Universität Marburg", 
-      ort: "Marburg, Germany",
-      degree: "Doctorate of Mathematics",
-      timeline: "September 2018 - April 2022",
-      mark: "Overall note: cum laude"
-    },
-    { 
-      img: require("../editable-stuff/UniBonn.png"), 
-      name: "Rheinische Friedrich-Wilhelms-Universität Bonn", 
-      degree: "Master of Science in Mathematics",
-      ort: "Bonn, Germany",
-      timeline: "September 2015 - April 2018",
-      mark: "Overall note: 1,9"
 
-    },
-    { 
-      img: require("../editable-stuff/UniDamas.png"), 
-      name: "University of Damascus", 
-      degree: "Bachelor of Science",
-      ort: "Damascus, Syria",
-      timeline: "September 2009 - September 2014",
-      mark: "Overall note: 81.99%"
+  heading: "Experience",
 
+  data: [
+    {
+      role:
+        "Business Intelligence and Machine Learning Consultant",
+
+      company: "Süwag",
+
+      companylogo: require("../assets/img/suewag.png"),
+
+      date: "May 2022 – Present",
+
+      summary:
+        "Working across business intelligence, data engineering and machine learning in the energy sector, with a focus on scalable data foundations, analytical workflows and decision-support systems.",
+
+      tags: [
+        "Data Engineering",
+        "Machine Learning",
+        "Business Intelligence",
+        "Energy",
+      ],
+    },
+
+    {
+      role: "Data Analyst (Werkstudent)",
+
+      company: "Veeva Systems",
+
+      companylogo: require("../assets/img/veeva.png"),
+
+      date: "Feb 2019 – Sep 2019",
+
+      summary:
+        "Data analysis and reporting work focused on turning structured business data into clearer analytical insight.",
+
+      tags: [
+        "Data Analysis",
+        "Reporting",
+        "Analytics",
+      ],
     },
   ],
-  imageSize: {
-    width:"10",
-    height:"300"
-  }
 };
 
-// SKILLS SECTION
+// Capabilities
+// ==========================================================
+// CAPABILITIES
+// Professional capabilities, technologies and areas of depth
+// ==========================================================
+
 const skills = {
   show: true,
-  heading: "Skills",
+
+  heading: "Capabilities",
+
   categories: [
+    // ------------------------------------------------------
+    // 01 — Programming
+    // ------------------------------------------------------
+
     {
       title: "Programming & Scripting",
-      proficiency: "Expert",
-      skills: [
-        "Python (Advanced Data Science, Automation, Web Scraping)",
-        "R (Statistical Modeling, Advanced Reporting)",
-        "Bash Scripting",
-        "Version Control & Collaboration (Git, JIRA, Confluence) ",
+      shortTitle: "Programming",
+
+      description:
+        "Programming for data-intensive applications, analytical workflows and automation, from exploratory work through to maintainable production code.",
+
+      technologies: [
+        "Python",
+        "R",
+        "Bash",
+        "Git",
+      ],
+
+      expertise: [
+        "Data processing & transformation",
+        "Workflow automation",
+        "Analytical programming",
+        "API & system integration",
+        "Reproducible development",
+        "Technical scripting",
       ],
     },
+
+    // ------------------------------------------------------
+    // 02 — Data Engineering
+    // ------------------------------------------------------
+
     {
-      title: "Data Engineering & Management",
-      proficiency: "Advanced",
-      skills: [
-        "ETL Pipeline Development & Optimization (Apache Airflow) ",
-        "Big Data Technologies (Spark, Kafka) ",
-        "Robust Database Management (Oracle SQL, MongoDB) ",
-        "SAP BW Query Design & Development & Modeling ",
+      title: "Data Engineering & Platforms",
+      shortTitle: "Data Engineering",
+
+      description:
+        "Designing data platforms and pipelines that turn fragmented operational data into reliable, accessible foundations for analytics, applications and AI.",
+
+      technologies: [
+        "Apache Airflow",
+        "Apache Spark",
+        "Apache Kafka",
+        "Oracle SQL",
+        "MongoDB",
+        "SAP BW",
+      ],
+
+      expertise: [
+        "ETL & ELT architecture",
+        "Data pipeline engineering",
+        "Data modelling",
+        "Distributed data processing",
+        "Streaming & event-driven systems",
+        "Data integration & orchestration",
       ],
     },
+
+    // ------------------------------------------------------
+    // 03 — AI & Machine Learning
+    // ------------------------------------------------------
+
     {
-      title: "ML Operations & AI Solutions",
-      proficiency: "Advanced",
-      skills: [
-        "End-to-End ML Pipeline Development & Operationalization",
-        "Predictive Modeling (Segmentation, Churn & Acquisition Forecasting) ",
-        "AI-Powered Application Development & Integration ",
-        "Strategic Data-Driven Decision Support",
+      title: "AI & Machine Learning",
+      shortTitle: "AI & Machine Learning",
+
+      description:
+        "Developing applied machine learning and AI solutions around concrete business and operational problems, with attention to how models integrate into the systems around them.",
+
+      technologies: [
+        "Python",
+        "Machine Learning",
+        "Predictive Modelling",
+        "AI Applications",
+      ],
+
+      expertise: [
+        "End-to-end ML pipelines",
+        "Predictive modelling",
+        "Segmentation & classification",
+        "Churn & acquisition modelling",
+        "AI application integration",
+        "Model operationalisation",
       ],
     },
+
+    // ------------------------------------------------------
+    // 04 — Business Intelligence
+    // ------------------------------------------------------
+
     {
-      title: "BI & Reporing Solutions",
-      proficiency: "Advanced",
-      skills: [
-        "Interactive Dashboard Development (Power BI, SAP Analytics Cloud, Shiny) ",
-        "Key Performance Indicator Development & Optimization",
-        "Executive-Level Reporting & Data Storytelling",
-        "Advanced Data Visualization Libraries",
+      title: "Business Intelligence & Analytics",
+      shortTitle: "BI & Analytics",
+
+      description:
+        "Building analytical products and reporting systems that make complex operational data easier to understand, interrogate and use in decision-making.",
+
+      technologies: [
+        "Power BI",
+        "SAP Analytics Cloud",
+        "Shiny",
+        "R",
+      ],
+
+      expertise: [
+        "BI solution development",
+        "KPI & metric design",
+        "Executive reporting",
+        "Analytical applications",
+        "Data visualisation",
+        "Decision-support systems",
       ],
     },
+
+    // ------------------------------------------------------
+    // 05 — Technical Delivery
+    // ------------------------------------------------------
+
     {
-      title: "Development",
-      proficiency: "Expert",
-      skills: [
-        "Integrated Development Environments (VS Code, Jupyter Notebooks) ",
-        "Agile Development & Project Management Methodologies",
-        "CI/CD-Aware Coding Practices for Production Environments",
-        "Comprehensive Documentation & Reporting (RMarkdown, Jupyter Reports) ",
+      title: "Technical Architecture & Delivery",
+      shortTitle: "Architecture & Delivery",
+
+      description:
+        "Taking technical work beyond implementation: shaping solutions, establishing sound engineering practices and carrying systems from initial problem definition into delivery.",
+
+      technologies: [
+        "Git",
+        "Jupyter",
+        "VS Code",
+        "JIRA",
+        "Confluence",
+      ],
+
+      expertise: [
+        "Solution architecture",
+        "Technical design",
+        "CI/CD-aware development",
+        "Technical documentation",
+        "Agile delivery",
+        "Technical stakeholder collaboration",
       ],
     },
   ],
 };
 
+// Background / Education
+const leadership = {
+  show: true,
 
-// GET IN TOUCH SECTION
+  heading: "Background",
+
+  images: [
+    {
+      img: require("../editable-stuff/UniMarburg.png"),
+
+      name: "Philipps-Universität Marburg",
+
+      ort: "Marburg, Germany",
+
+      degree: "Doctorate of Mathematics",
+
+      timeline: "September 2018 – April 2022",
+
+      mark: "Cum laude",
+    },
+
+    {
+      img: require("../editable-stuff/UniBonn.png"),
+
+      name:
+        "Rheinische Friedrich-Wilhelms-Universität Bonn",
+
+      ort: "Bonn, Germany",
+
+      degree: "Master of Science in Mathematics",
+
+      timeline: "September 2015 – April 2018",
+
+      mark: "Overall grade: 1.9",
+    },
+
+    {
+      img: require("../editable-stuff/UniDamas.png"),
+
+      name: "University of Damascus",
+
+      ort: "Damascus, Syria",
+
+      degree: "Bachelor of Science",
+
+      timeline: "September 2009 – September 2014",
+
+      mark: "Overall grade: 81.99%",
+    },
+  ],
+};
+
+// Contact
 const getInTouch = {
   show: true,
-  heading: "Get In Touch",
+
+  heading: "Have something worth building?",
+
   message:
-    "Discuss a project or just want to say hi? My Inbox is open for all at:",
+    "Whether it is a data platform, an intelligent system, a technical product or simply an interesting problem, start with a conversation.",
+
   email: "abdalla.alia.dev@hotmail.com",
 };
 
-const experiences = {
-  show: true,
-  heading: "Experiences",
-  data: [
-    {
-      role: 'Business Intelligence and Machine Learning Consultant',// Here Add Company Name
-      companylogo: require('../assets/img/suewag.png'),
-      date: 'Mai 2022 – Present',
-    },
-    {
-      role: 'Data Analyst (Werkstudent)',
-      companylogo: require('../assets/img/veeva.png'),
-      date: 'Feb 2019 – Sep 2019',
-    },
-  ]
-}
-
-// Blog SECTION
-// const blog = {
-//   show: false,
-// };
-
-console.log('Skills data before render:', {
-  heading: skills.heading,
-  hardSkills: skills.hardSkills,
-  softSkills: skills.softSkills,
-  mixSkills: skills.mixSkills
-});
-
-
-export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences };
+export {
+  navBar,
+  mainBody,
+  about,
+  selectedWork,
+  repos,
+  experiences,
+  skills,
+  leadership,
+  getInTouch,
+};

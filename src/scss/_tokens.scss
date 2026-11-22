@@ -1,0 +1,36 @@
+// ----------------------------------------------------------
+// Alia — Personal design system
+// ----------------------------------------------------------
+
+$alia-bg: #f1f0eb;
+$alia-surface: #e8e7e1;
+$alia-text: #111111;
+$alia-muted: #6c6b66;
+$alia-border: rgba(17, 17, 17, 0.18);
+
+$alia-dark: #111111;
+$alia-light: #f5f4ef;
+
+$alia-accent: #111111;
+
+$font-sans:
+  Inter,
+  "Helvetica Neue",
+  Helvetica,
+  Arial,
+  sans-serif;
+
+$font-mono:
+  "IBM Plex Mono",
+  "SFMono-Regular",
+  Consolas,
+  "Liberation Mono",
+  monospace;
+
+$content-width: 1440px;
+$page-gutter: clamp(1.25rem, 4vw, 4.5rem);
+
+$section-space: clamp(6rem, 12vw, 11rem);
+
+$transition-fast: 160ms ease;
+$transition-normal: 240ms ease;

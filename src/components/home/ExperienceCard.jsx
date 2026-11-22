@@ -1,23 +1,68 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Col,
-} from "react-bootstrap";
+const ExperienceCard = ({ data, index, total }) => {
+  const number = String(index + 1).padStart(2, "0");
 
-const ExperienceCard = ({ data }) => {
   return (
-    <Col lg="6">
-      <div className="pb-5 text-center">
-        <img className=" bg-white mb-3" src={data.companylogo} alt="" />
-        <p className="lead">
-          {data.role}
-          <br />
-          {data.date}
-        </p>
-
+    <article className="career-v4__entry">
+      <div className="career-v4__entry-index">
+        <span>{number}</span>
+        <span className="career-v4__index-line" aria-hidden="true" />
+        <span>{String(total).padStart(2, "0")}</span>
       </div>
-    </Col>
+
+      <div className="career-v4__entry-main">
+        <div className="career-v4__entry-heading">
+          <span className="career-v4__entry-overline">
+            PROFESSIONAL EXPERIENCE / {number}
+          </span>
+
+          <h3>{data.role}</h3>
+
+          {data.company && (
+            <div className="career-v4__organization">
+              <span className="career-v4__organization-symbol" aria-hidden="true">
+                ↳
+              </span>
+              <span>{data.company}</span>
+            </div>
+          )}
+        </div>
+
+        {data.summary && (
+          <p className="career-v4__summary">
+            {data.summary}
+          </p>
+        )}
+
+        {Array.isArray(data.tags) && data.tags.length > 0 && (
+          <div className="career-v4__disciplines">
+            <span className="career-v4__disciplines-label">
+              FOCUS AREAS
+            </span>
+
+            <ul className="career-v4__tags">
+              {data.tags.map((tag, tagIndex) => (
+                <li key={`${tag}-${tagIndex}`}>
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
+      <div className="career-v4__entry-aside">
+        <span className="career-v4__date">
+          {data.date}
+        </span>
+
+        <span className="career-v4__entry-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </div>
+    </article>
   );
-}
+};
 
 export default ExperienceCard;

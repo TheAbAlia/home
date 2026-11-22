@@ -1,0 +1,319 @@
+// ==========================================================
+// PORTFOLIO V11 — NAVIGATION, CAREER, BACKGROUND & CONTACT
+// Scoped refinements; no external dependencies.
+// ==========================================================
+
+.portfolio-v8 {
+
+  // NAVIGATION
+
+  .p11-nav {
+    .p8-nav__links a {
+      transition: color 220ms ease;
+    }
+
+    .p8-nav__links a.is-active {
+      font-weight: 650;
+    }
+
+    .p8-nav__links a.is-active::after {
+      transform: scaleX(1);
+    }
+
+    .p8-nav__cta.is-active {
+      background: var(--p8-ink);
+      color: var(--p8-white);
+    }
+
+    .p8-nav__brand {
+      transition: opacity 220ms ease;
+    }
+
+    .p8-nav__brand:hover {
+      opacity: .7;
+    }
+
+    .p8-nav__toggle {
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .p11-nav__toggle-icon {
+      display: inline-block;
+      font-size: 1.2rem;
+      line-height: 1;
+      font-weight: 400;
+    }
+  }
+
+  // EXPERIENCE — make the role the primary scan target
+
+  .p8-experience {
+    .p8-timeline {
+      border-top: 1px solid var(--p8-rule);
+    }
+
+    .p8-timeline__item {
+      position: relative;
+      border-bottom: 1px solid var(--p8-rule);
+      transition: background-color 300ms ease;
+    }
+
+    .p8-timeline__item:hover {
+      background-color: rgba(21, 21, 21, .025);
+    }
+
+    .p8-timeline__date {
+      color: var(--p8-muted);
+    }
+
+    .p8-timeline__content h3 {
+      font-size: clamp(1.75rem, 3.2vw, 3.35rem);
+      letter-spacing: -.055em;
+      font-weight: 500;
+      line-height: 1.08;
+    }
+
+    .p8-timeline__company {
+      margin-top: .75rem;
+      line-height: 1.6;
+    }
+
+    .p8-timeline__description {
+      max-width: 720px;
+      margin-top: 1.25rem;
+      line-height: 1.75;
+      text-wrap: pretty;
+    }
+  }
+
+  // BACKGROUND — quiet, academic, structured
+
+  .p8-about {
+    .p8-about__grid {
+      align-items: start;
+    }
+
+    h2 {
+      max-width: 680px;
+      line-height: 1.035;
+      letter-spacing: -.065em;
+    }
+
+    .p8-about__lead {
+      max-width: 590px;
+      font-size: clamp(1.1rem, 1.55vw, 1.4rem);
+      line-height: 1.65;
+      text-wrap: pretty;
+    }
+
+    .p8-about__support {
+      max-width: 530px;
+      line-height: 1.75;
+      text-wrap: pretty;
+    }
+
+    .p8-about__languages {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: .75rem 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--p8-rule);
+    }
+
+    .p8-about__languages strong {
+      font-weight: 500;
+    }
+
+    .p8-about__education {
+      border-top: 1px solid var(--p8-rule);
+      padding-top: 1.25rem;
+    }
+
+    .p8-about__degree {
+      padding-block: 1.5rem;
+      border-bottom: 1px solid var(--p8-rule);
+    }
+
+    .p8-about__degree h3 {
+      font-size: clamp(1.25rem, 1.75vw, 1.75rem);
+      letter-spacing: -.035em;
+      line-height: 1.25;
+      margin-block: .45rem;
+    }
+
+    .p8-about__degree p {
+      line-height: 1.55;
+    }
+  }
+
+  // CONTACT — stronger CTA, refined footer
+
+  .p8-contact {
+    .p8-contact__main h2 {
+      max-width: 1050px;
+      letter-spacing: -.07em;
+    }
+
+    .p8-contact__main > p {
+      line-height: 1.7;
+      text-wrap: pretty;
+    }
+
+    .p8-contact__email {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      width: fit-content;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .p8-contact__email > span:last-child {
+      display: inline-block;
+      flex-shrink: 0;
+      transition: transform 350ms cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .p8-contact__email:hover > span:last-child {
+      transform: translate(4px, -4px);
+    }
+
+    .p8-contact__footer {
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .p8-contact__social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.75rem;
+    }
+
+    .p8-contact__social a,
+    .p8-contact__top {
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+      transition: opacity 220ms ease;
+    }
+
+    .p8-contact__social a:hover,
+    .p8-contact__top:hover {
+      opacity: .65;
+    }
+  }
+
+  // MOBILE NAVIGATION
+
+  @media (max-width: 800px) {
+    .p11-nav {
+      &.is-menu-open {
+        background: var(--p8-bg);
+        box-shadow: 0 1px 0 var(--p8-rule);
+      }
+
+      .p8-nav__links {
+        overflow-y: auto;
+        max-height: calc(100dvh - 76px);
+        overscroll-behavior: contain;
+      }
+
+      .p8-nav__links a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+      }
+
+      .p8-nav__links a.is-active {
+        padding-left: .75rem;
+        box-shadow: inset 2px 0 0 currentColor;
+      }
+
+      .p8-nav__links a::after {
+        display: none;
+      }
+
+      .p8-nav__mobile-contact {
+        justify-content: space-between;
+      }
+
+      .p8-nav__toggle {
+        display: inline-flex;
+      }
+    }
+
+    .p8-experience {
+      .p8-timeline__item {
+        padding-block: 1.75rem;
+      }
+
+      .p8-timeline__content h3 {
+        font-size: clamp(1.8rem, 5.3vw, 2.8rem);
+      }
+    }
+
+    .p8-about .p8-about__education {
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .p11-nav {
+      .p8-nav__brand small {
+        font-size: .59rem;
+      }
+
+      .p8-nav__toggle {
+        min-height: 44px;
+      }
+    }
+
+    .p8-experience {
+      .p8-timeline__content h3 {
+        font-size: clamp(1.65rem, 7vw, 2.35rem);
+      }
+
+      .p8-timeline__description {
+        font-size: .96rem;
+      }
+    }
+
+    .p8-about {
+      .p8-about__lead {
+        font-size: 1.1rem;
+      }
+
+      .p8-about__degree {
+        padding-block: 1.25rem;
+      }
+    }
+
+    .p8-contact {
+      .p8-contact__email {
+        width: 100%;
+        gap: .5rem;
+      }
+
+      .p8-contact__footer {
+        align-items: flex-start;
+      }
+
+      .p8-contact__social {
+        gap: .75rem 1.25rem;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .p11-nav *,
+    .p8-experience .p8-timeline__item,
+    .p8-contact .p8-contact__email > span:last-child,
+    .p8-contact .p8-contact__social a,
+    .p8-contact .p8-contact__top {
+      transition: none !important;
+    }
+  }
+}

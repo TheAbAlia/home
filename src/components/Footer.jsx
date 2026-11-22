@@ -1,30 +1,40 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 
-const Footer = (props) => {
-  const bgStyle = { backgroundColor: "#f5f5f5" };
+const Footer = ({ children }) => {
+  const year = new Date().getFullYear();
 
   return (
-    <footer style={bgStyle} className="mt-auto py-5 text-center ">
-      <Container>
-        {props.children}
-        <i className="fas fa-code" /> with <i className="fas fa-heart" /> by{" "}
-        <a
-          rel="noopener"
-          href="https://github.com/hashirshoaeb"
-          aria-label="My GitHub"
-        > <span className="badge bg-dark">
-            Hashir Shoaib
-          </span>
-        </a>{" "}
-        using <i className="fab fa-react" />
-        <p>
-          <small className="text-muted">
-            Project code is open source. Feel free to fork and make your own
-            version.
-          </small>
-        </p>
-      </Container>
+    <footer
+      id="contact"
+      className="contact-section contact-section--v7"
+      aria-labelledby="contact-heading"
+    >
+      <div className="site-container">
+        {children}
+
+        <div className="site-footer-v7">
+          <div className="site-footer-v7__identity">
+            <a href="#home" aria-label="Abdalla Alia — Back to top">
+              A<span>.</span>
+            </a>
+
+            <div>
+              <strong>ABDALLA ALIA</strong>
+              <span>DATA / INTELLIGENCE / SYSTEMS</span>
+            </div>
+          </div>
+
+          <div className="site-footer-v7__details">
+            <span>© {year} ABDALLA ALIA</span>
+            <span>INDEPENDENT THINKING / ENGINEERED SOLUTIONS</span>
+          </div>
+
+          <a className="site-footer-v7__back" href="#home">
+            BACK TO TOP
+            <span aria-hidden="true">↑</span>
+          </a>
+        </div>
+      </div>
     </footer>
   );
 };

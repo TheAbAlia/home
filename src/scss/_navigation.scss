@@ -1,0 +1,253 @@
+// ==========================================================
+// NAVIGATION — MINIMAL EDITORIAL
+// ==========================================================
+
+.site-nav {
+  position: fixed;
+  z-index: 1000;
+  inset: 0 0 auto;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease,
+    backdrop-filter 300ms ease;
+}
+
+.site-nav--scrolled,
+.site-nav--expanded {
+  background: rgba(241, 240, 235, 0.94);
+  border-bottom-color: $alia-border;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.site-nav__inner {
+  width: min(
+    calc(100% - (#{$page-gutter} * 2)),
+    #{$content-width}
+  );
+  min-height: 82px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-shrink: 0;
+  color: $alia-text;
+  text-decoration: none;
+}
+
+.site-nav__brand:hover {
+  color: $alia-text;
+}
+
+.site-nav__brand-mark {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.09em;
+}
+
+.site-nav__brand-mark span {
+  color: $alia-muted;
+}
+
+.site-nav__brand-name {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+}
+
+.site-nav__navigation {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2.5rem);
+  margin-left: auto;
+}
+
+.site-nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding-block: 0.4rem;
+  color: $alia-text;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 180ms ease;
+}
+
+.site-nav__link:hover {
+  color: $alia-text;
+  opacity: 0.5;
+}
+
+.site-nav__link-number {
+  color: $alia-muted;
+  font-size: 0.5rem;
+  transform: translateY(-0.35em);
+}
+
+.site-nav__link--external {
+  gap: 0.4rem;
+}
+
+.site-nav__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid $alia-text;
+  color: $alia-text;
+  font-family: $font-mono;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
+.site-nav__contact:hover {
+  background: $alia-text;
+  color: $alia-light;
+}
+
+.site-nav__toggle {
+  display: none;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0;
+  border: 0;
+  background: transparent;
+  color: $alia-text;
+  cursor: pointer;
+}
+
+.site-nav__toggle-text {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.site-nav__toggle-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+.site-nav__toggle-icon span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transition: transform 250ms ease;
+}
+
+.site-nav--expanded .site-nav__toggle-icon span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.site-nav--expanded .site-nav__toggle-icon span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+@media (max-width: 1199.98px) {
+  .site-nav__inner {
+    min-height: 72px;
+  }
+
+  .site-nav__navigation {
+    gap: 1rem;
+  }
+
+  .site-nav__contact {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .site-nav__inner {
+    min-height: 68px;
+  }
+
+  .site-nav__toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .site-nav__navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 1rem $page-gutter 2rem;
+    background: $alia-bg;
+    border-bottom: 1px solid $alia-border;
+    box-shadow: 0 20px 30px rgba(17, 17, 17, 0.04);
+  }
+
+  .site-nav__navigation--open {
+    display: flex;
+    animation: nav-enter 250ms ease both;
+  }
+
+  .site-nav__link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid $alia-border;
+    font-family: $font-sans;
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    letter-spacing: -0.04em;
+  }
+
+  .site-nav__link-number {
+    width: 2rem;
+    font-family: $font-mono;
+    font-size: 0.65rem;
+    letter-spacing: 0;
+    transform: none;
+  }
+}
+
+@keyframes nav-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav,
+  .site-nav__navigation--open,
+  .site-nav__toggle-icon span {
+    animation: none;
+    transition: none;
+  }
+}

@@ -1,106 +1,127 @@
-import React, { useState } from "react";
-import { useScrollPosition } from "../hooks/useScrollPosition";
-import useResizeObserver from "../hooks/useResizeObserver";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { mainBody, repos, about, experiences, leadership, skills } from "../editable-stuff/config.js";
-import { NavLink } from "./home/migration";
+import React from "react";
+
+const links = [
+  { label: "Work", href: "#work" },
+  { label: "Expertise", href: "#skills" },
+  { label: "Experience", href: "#experiences" },
+  { label: "About", href: "#aboutme" },
+];
 
 const Navigation = React.forwardRef((props, ref) => {
-  // const { showBlog, FirstName } = config;
-  const [isTop, setIsTop] = useState(true);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const navbarMenuRef = React.useRef();
-  const navbarDimensions = useResizeObserver(navbarMenuRef);
-  const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      if (!navbarDimensions) return;
-      currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
-        ? setIsTop(true)
-        : setIsTop(false);
-      setScrollPosition(currPos.y);
-    },
-    [navBottom]
-  );
+  const [scrolled, setScrolled] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(false);
 
   React.useEffect(() => {
-    if (!navbarDimensions) return;
-    navBottom - scrollPosition >= ref.current.offsetTop
-      ? setIsTop(false)
-      : setIsTop(true);
-  }, [navBottom, navbarDimensions, ref, scrollPosition]);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (!expanded) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setExpanded(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [expanded]);
+
+  const closeMenu = () => setExpanded(false);
 
   return (
-    <Navbar
-      ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
-        }`}
-      expand="lg"
+    <header
+      className={[
+        "site-nav",
+        scrolled ? "site-nav--scrolled" : "",
+        expanded ? "site-nav--expanded" : "",
+      ].filter(Boolean).join(" ")}
     >
-      <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
-        {`<${mainBody.firstName} />`}
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="navbar-nav mr-auto">
-          {/* {
-            <NavLink className="nav-item lead">
-              <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
-            </NavLink>
-          } */}
-          {repos.show && (
+      <div className="site-nav__inner">
+        <a
+          href="#home"
+          className="site-nav__brand"
+          onClick={closeMenu}
+          aria-label="Abdalla Alia — Back to top"
+        >
+          <span className="site-nav__brand-mark">A<span>.</span></span>
+          <span className="site-nav__brand-name">ABDALLA ALIA</span>
+        </a>
 
-            <NavLink
-              href={process.env.PUBLIC_URL + "/#projects"}
+        <nav
+          id="main-navigation"
+          className={[
+            "site-nav__navigation",
+            expanded ? "site-nav__navigation--open" : "",
+          ].filter(Boolean).join(" ")}
+          aria-label="Main navigation"
+        >
+          {links.map((link, index) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="site-nav__link"
+              onClick={closeMenu}
             >
-              Projects
-            </NavLink>
-          )}
-          <NavLink
-            className="nav-item lead"
-            href={about.resume}
+              <span className="site-nav__link-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              {link.label}
+            </a>
+          ))}
+
+          <a
+            href="#contact"
+            className="site-nav__link site-nav__link--external"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
           >
-            Resume
-          </NavLink>
-          {about.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#aboutme"}
-            >
-              About
-            </NavLink>
-          )}
-          {experiences.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#experiences"}
-            >
-              Experiences
-            </NavLink>
-          )}
-          {leadership.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#leadership"}
-            >
-              Education
-            </NavLink>
-          )}
-          {skills.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#skills"}
-            >
-              Skills
-            </NavLink>
-          )}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+            Independent Projects <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+
+        <a className="site-nav__contact" href="#contact">
+          LET'S TALK <span aria-hidden="true">↗</span>
+        </a>
+
+        <button
+          type="button"
+          className="site-nav__toggle"
+          aria-expanded={expanded}
+          aria-controls="main-navigation"
+          aria-label={expanded ? "Close navigation" : "Open navigation"}
+          onClick={() => setExpanded((value) => !value)}
+        >
+          <span className="site-nav__toggle-text">
+            {expanded ? "CLOSE" : "MENU"}
+          </span>
+          <span className="site-nav__toggle-icon" aria-hidden="true">
+            <span />
+            <span />
+          </span>
+        </button>
+      </div>
+    </header>
   );
 });
+
+Navigation.displayName = "Navigation";
 
 export default Navigation;

@@ -1,0 +1,363 @@
+// ==========================================================
+// PORTFOLIO V10 — INTERACTION & COMPONENT POLISH
+// ==========================================================
+
+.portfolio-v8 {
+
+  // HERO — better CTA rhythm and intentional proportions
+
+  .p10-hero {
+    .p8-hero__title {
+      max-width: 100%;
+      font-weight: 500;
+      text-wrap: nowrap;
+    }
+
+    .p8-hero__eyebrow {
+      letter-spacing: .08em;
+    }
+
+    .p8-hero__bottom {
+      border-top: 1px solid var(--p8-rule);
+      padding-top: clamp(1.5rem, 2.5vw, 2.5rem);
+    }
+
+    .p8-hero__bottom p {
+      max-width: 550px;
+    }
+
+    .p8-hero__actions {
+      gap: clamp(1rem, 2vw, 2rem);
+    }
+
+    .p10-primary-cta {
+      min-width: 205px;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .p10-primary-cta > span:last-child {
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .p10-scroll-cue {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      text-decoration: none;
+      color: inherit;
+      transition: color 250ms ease;
+    }
+
+    .p10-scroll-cue:hover {
+      color: var(--p8-ink);
+    }
+
+    .p10-scroll-cue > span {
+      display: inline-block;
+      transition: transform 350ms cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .p10-scroll-cue:hover > span {
+      transform: translateY(4px);
+    }
+  }
+
+  // IMPACT — editorial case-study cards
+
+  .p10-impact {
+    .p8-impact__grid {
+      align-items: stretch;
+    }
+
+    .p10-impact__card {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: clamp(2.5rem, 4vw, 4.5rem);
+      transition:
+        background-color 350ms ease,
+        opacity 750ms cubic-bezier(.22, 1, .36, 1),
+        transform 750ms cubic-bezier(.22, 1, .36, 1);
+      transition-delay: 0ms;
+    }
+
+    .p10-impact__card[data-reveal]:not(.is-visible) {
+      transition-delay: 0ms;
+    }
+
+    .p10-impact__card[data-reveal].is-visible {
+      transition-delay: calc(var(--p10-order, 0) * 90ms);
+    }
+
+    .p10-impact__card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 2px;
+      background: #c5c2b8;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 500ms cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .p10-impact__card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .p8-impact__top {
+      min-height: 2.5rem;
+    }
+
+    .p8-impact__top span:last-child {
+      text-align: right;
+    }
+
+    .p8-impact__metric {
+      min-height: clamp(135px, 14vw, 200px);
+      justify-content: center;
+    }
+
+    .p8-impact__metric strong {
+      font-weight: 450;
+      line-height: 1;
+    }
+
+    .p8-impact__body h3 {
+      max-width: 350px;
+    }
+
+    .p8-impact__body p {
+      max-width: 400px;
+    }
+
+    .p8-tags {
+      padding-right: 2rem;
+    }
+
+    .p10-impact__corner {
+      position: absolute;
+      right: clamp(1.5rem, 2.2vw, 2.75rem);
+      bottom: clamp(1.5rem, 2.2vw, 2.75rem);
+      color: rgba(245, 244, 239, .45);
+      font-size: 1.3rem;
+      line-height: 1;
+      transition:
+        transform 350ms cubic-bezier(.22, 1, .36, 1),
+        color 350ms ease;
+    }
+
+    .p10-impact__card:hover .p10-impact__corner {
+      transform: translate(3px, -3px);
+      color: var(--p8-white);
+    }
+  }
+
+  // EXPERTISE — responsive, clearly selected, fast
+
+  .p10-expertise {
+    .p8-expertise__layout {
+      grid-template-columns:
+        minmax(0, .95fr)
+        minmax(0, 1.05fr);
+    }
+
+    .p8-expertise__menu button {
+      grid-template-columns: 32px minmax(0, 1fr) 24px;
+      gap: 1rem;
+      min-height: 82px;
+      padding-block: 1.25rem;
+    }
+
+    .p8-expertise__menu button strong {
+      line-height: 1.2;
+    }
+
+    .p8-expertise__menu button.is-active {
+      box-shadow: inset 3px 0 0 var(--p8-ink);
+    }
+
+    .p10-expertise__number {
+      color: var(--p8-muted);
+    }
+
+    .p10-expertise__indicator {
+      justify-self: end;
+      font-size: 1.15rem !important;
+      transition: transform 250ms ease;
+    }
+
+    .p8-expertise__menu button:hover .p10-expertise__indicator {
+      transform: translate(2px, -2px);
+    }
+
+    .p10-expertise__panel {
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+    }
+
+    .p10-expertise__content {
+      flex: 1;
+      animation: p10-panel-in 260ms cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .p10-expertise__content h3 {
+      margin-top: clamp(2rem, 4vw, 4rem);
+      margin-bottom: 1.25rem;
+    }
+
+    .p10-expertise__content p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .p10-expertise__footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--p8-rule);
+      color: var(--p8-muted);
+      font-family: $font-mono;
+      font-size: .65rem;
+      letter-spacing: .045em;
+    }
+
+    @keyframes p10-panel-in {
+      from {
+        opacity: 0;
+        transform: translateY(7px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Tablet
+
+  @media (max-width: 1100px) {
+    .p10-hero .p8-hero__title {
+      font-size: clamp(3.7rem, 9.8vw, 7.8rem);
+    }
+
+    .p10-impact {
+      .p10-impact__card {
+        padding-bottom: 2.5rem;
+      }
+
+      .p8-impact__metric {
+        min-height: 0;
+      }
+
+      .p8-impact__body {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .p10-hero {
+      .p8-hero__title {
+        font-size: clamp(3.4rem, 10vw, 6.5rem);
+      }
+
+      .p8-hero__bottom {
+        gap: 1.5rem;
+      }
+    }
+
+    .p10-expertise {
+      .p8-expertise__layout {
+        grid-template-columns: 1fr;
+      }
+
+      .p10-expertise__panel {
+        min-height: 0;
+      }
+
+      .p10-expertise__content h3 {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  // Mobile
+
+  @media (max-width: 560px) {
+    .p10-hero {
+      .p8-hero__title {
+        font-size: clamp(3rem, 11vw, 4.8rem);
+        text-wrap: nowrap;
+      }
+
+      .p8-hero__bottom {
+        padding-top: 1.5rem;
+      }
+
+      .p8-hero__actions {
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .p10-primary-cta {
+        min-width: 190px;
+      }
+    }
+
+    .p10-impact {
+      .p10-impact__card {
+        padding-bottom: 3.5rem;
+      }
+
+      .p8-impact__metric {
+        min-height: 0;
+        margin-block: 2rem;
+      }
+
+      .p8-impact__top {
+        gap: .75rem;
+      }
+    }
+
+    .p10-expertise {
+      .p8-expertise__menu button {
+        min-height: 70px;
+        gap: .65rem;
+      }
+
+      .p10-expertise__panel {
+        padding: 1.75rem 1.25rem;
+      }
+
+      .p10-expertise__footer {
+        font-size: .58rem;
+      }
+    }
+  }
+
+  @media (max-width: 390px) {
+    .p10-hero .p8-hero__title {
+      font-size: clamp(2.6rem, 10.5vw, 3.3rem);
+    }
+  }
+
+  // Accessible motion preferences
+
+  @media (prefers-reduced-motion: reduce) {
+    .p10-hero .p10-scroll-cue > span,
+    .p10-impact .p10-impact__card,
+    .p10-impact .p10-impact__card::before,
+    .p10-impact .p10-impact__corner,
+    .p10-expertise .p10-expertise__indicator {
+      transition: none !important;
+    }
+
+    .p10-expertise .p10-expertise__content {
+      animation: none !important;
+    }
+  }
+}
